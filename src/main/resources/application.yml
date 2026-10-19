@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: fleetpay
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/fleetpay}
+    username: ${DB_USER:fleetpay}
+    password: ${DB_PASSWORD:fleetpay}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
